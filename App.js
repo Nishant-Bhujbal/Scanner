@@ -6,6 +6,7 @@ export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [count,setCount] = useState(0);
+  const [list_data,setlist_data] = useState("");
 
   // const list = [];
 
@@ -24,9 +25,12 @@ export default function App() {
     if(count === 4){
       setScanned(true);
       setCount(0);
+      console.log(list_data);
+
     }
-    alert(`Bar code with type ->>>> ${type} and data is this ->>>>${data} has been scanned!`);
+    // alert(`Bar code with type ->>>> ${type} and data is this ->>>>${data} has been scanned!`);
     // list.append(data);
+    setlist_data(data);
   };
 
   if (hasPermission === null) {
